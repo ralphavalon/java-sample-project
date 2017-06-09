@@ -18,18 +18,18 @@ public class UserRestController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<User> getAll() {
 		return userService.getAll();
 	}
 	
-	@RequestMapping(value="/", method=RequestMethod.POST)
+	@RequestMapping(value="", method=RequestMethod.POST)
 	public User create(User user) {
 		userService.save(user);
 		return user;
 	}
 	
-	@RequestMapping(value="/{id}", method=RequestMethod.POST)
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public User getById(@PathVariable("id") Integer id) {
 		return userService.getById(id);
 	}
