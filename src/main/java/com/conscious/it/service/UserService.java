@@ -23,7 +23,8 @@ public class UserService {
 	}
 	
 	public User getById(Integer id) {
-		return userDao.getById(id);
+		User user = userDao.getById(id);
+		return user != null ? user : new User();
 	}
 	
 
