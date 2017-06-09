@@ -30,7 +30,7 @@ public class UserRestController {
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.POST)
-	public User create(@PathVariable("id") Integer id) {
+	public User getById(@PathVariable("id") Integer id) {
 		return userService.getById(id);
 	}
 	
