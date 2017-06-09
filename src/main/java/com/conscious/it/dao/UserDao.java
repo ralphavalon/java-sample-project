@@ -3,8 +3,11 @@ package com.conscious.it.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.conscious.it.model.User;
 
+@Repository
 public class UserDao {
 	
 	static List<User> users = new ArrayList<User>();
