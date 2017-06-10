@@ -7,6 +7,20 @@ A Sample Project to be used for examples in https://ralphavalon.wordpress.com/ a
 mvn package
 ```
 
+### This project uses JUnit 5 for testing (demo purposes) ###
+* To run all tests
+```
+mvn test
+```
+
+* To run tests with tag **example**
+```
+mvn test -Dgroups=example
+```
+
+* Read more about JUnit 5: **http://junit.org/junit5/docs/current/user-guide/**
+
+
 ### About the project ###
 
 * It's a simple project with Spring Boot + Thymeleaf exposing 4 endpoints:
