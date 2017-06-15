@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -86,6 +87,18 @@ public class UserServiceTest {
             Thread.sleep(99); // If more than 100, it will fail due timeout assert
         });
     }
+	
+	@Nested
+    @DisplayName("when new")
+    class WhenNew {
+
+        @Test
+        @DisplayName("whatever")
+        void isNotEmpty() {
+        	//do your inner tests
+            Assertions.assertTrue(Boolean.TRUE);
+        }
+	}
 	
 	protected static Stream<Arguments> createUsers() {
 	    return Stream.of(
