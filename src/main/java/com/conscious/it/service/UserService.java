@@ -19,11 +19,11 @@ public class UserService {
 	}
 	
 	public List<User> getAll() {
-		return userDao.getAll();
+		return (List<User>) userDao.findAll();
 	}
 	
 	public User getById(Integer id) {
-		User user = userDao.getById(id);
+		User user = userDao.findOne(id);
 		return user != null ? user : new User();
 	}
 	
