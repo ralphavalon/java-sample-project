@@ -9,7 +9,7 @@ mvn package
 
 ### About the project ###
 
-* It's a simple project with Spring Boot + Thymeleaf exposing 4 endpoints:
+* It's a simple project with Spring Boot + Thymeleaf + Spring Data JPA exposing 4 endpoints:
 ```
 /
 /create
@@ -21,7 +21,7 @@ mvn package
 
 * The project is about adding and getting users only, but of two ways: *web page* and *REST*.
 
-* **NOTE:** This branch uses a java list as database. Other branches will have JPA/Hibernate to use with any database.
+* **NOTE:** This branch uses a H2 as database. You can configure it on *application.properties*
 
 * **START THE PROJECT:**
 
