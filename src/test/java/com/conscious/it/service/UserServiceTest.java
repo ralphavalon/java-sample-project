@@ -18,7 +18,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ObjectArrayArguments;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -45,7 +44,7 @@ public class UserServiceTest {
 	
 	@DisplayName("Testing parameterized users")
 	@ParameterizedTest
-	@MethodSource(names="createUsers")
+	@MethodSource(value="createUsers")
 	public void testParameterizedUser(User user, Integer id) {
 		Assertions.assertEquals(user, userService.getById(id));
 	}
@@ -102,8 +101,8 @@ public class UserServiceTest {
 	
 	protected static Stream<Arguments> createUsers() {
 	    return Stream.of(
-	            ObjectArrayArguments.create(userOne(), 1),
-	            ObjectArrayArguments.create(userTwo(), 2)
+	            Arguments.of(userOne(), 1),
+	            Arguments.of(userTwo(), 2)
         );
 	}
 	
