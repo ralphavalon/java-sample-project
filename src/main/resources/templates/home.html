@@ -27,43 +27,43 @@
 			<div class="middle">
 				<form method="POST" action="#" th:action="@{/create}" th:object="${user}">
 					<div class="form-group">
-						<label>Name</label> <input type="text" class="form-control"
-							name="name" placeholder="Your name" />
+						<label th:text="#{name}">Name</label> <input type="text" class="form-control"
+							name="name" placeholder="Your name" th:placeholder="#{name.placeholder}"/>
 						 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error-msg">Name Error</span>
 					</div>
 					<div class="form-group">
-						<label>City</label> <input type="text" class="form-control"
-							name="city" placeholder="Your city" />
+						<label th:text="#{city}">City</label> <input type="text" class="form-control"
+							name="city" placeholder="Your city" th:placeholder="#{city.placeholder}"/>
 						<span th:if="${#fields.hasErrors('city')}" th:errors="*{city}" class="error-msg">City Error</span>
 					</div>
 					<div class="form-group">
-						<label>Email</label> <input type="text" class="form-control"
-							name="email" placeholder="example@email.com" />
+						<label th:text="#{email}">Email</label> <input type="text" class="form-control"
+							name="email" placeholder="example@email.com" th:placeholder="#{email.placeholder}"/>
 						<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-msg">Email Error</span>
 					</div>
 					<div class="form-group">
-						<label>Password</label> <input type="password"
-							class="form-control" name="password" placeholder="Your password" />
+						<label th:text="#{password}">Password</label> <input type="password"
+							class="form-control" name="password" placeholder="Your password" th:placeholder="#{password.placeholder}"/>
 						<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-msg">Password Error</span>
 					</div>
 					<div class="form-group">
-						<label>Birthdate</label> <input type="text" class="form-control"
-							name="birthdate" placeholder="dd/MM/yyyy" />
+						<label th:text="#{birthdate}">Birthdate</label> <input type="text" class="form-control"
+							name="birthdate" placeholder="dd/MM/yyyy" th:placeholder="#{birthdate.placeholder}"/>
 						<span th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}" class="error-msg">Birthdate Error</span>
 					</div>
 					<div class="radio">
 						<label> <input type="radio" name="gender" id="gender-male"
-							value="MALE" checked="checked" /> <span>Male</span>
+							value="MALE" checked="checked" /> <span th:text="#{gender.male}">Male</span>
 						</label>
 					</div>
 					<div class="radio">
 						<label> <input type="radio" name="gender"
-							id="gender-female" value="FEMALE" /> <span>Female</span>
+							id="gender-female" value="FEMALE" /> <span th:text="#{gender.female}">Female</span>
 						</label>
 					</div>
 					<span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="error-msg">Gender Error</span>
 
-					<button type="submit" class="btn btn-default"><span>Save</span></button>
+					<button type="submit" class="btn btn-default"><span th:text="#{save}">Save</span></button>
 				</form>
 			</div>
 		</div>
