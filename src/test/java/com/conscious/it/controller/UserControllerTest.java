@@ -37,12 +37,15 @@ public class UserControllerTest {
         		post("/create")
         		.contentType(MediaType.APPLICATION_FORM_URLENCODED)
         		.param("name", "Ralph")
-        		.param("age", "25")
+        		.param("birthdate", "18/04/1992")
         		.param("city", "Rio de Janeiro")
+        		.param("email", "myemail@email.com")
+        		.param("password", "123456")
+        		.param("gender", "MALE")
     		)
         	.andDo(print())
         	.andExpect(status().isOk())
-            .andExpect(content().string(containsString("User <span>Ralph</span> added with success.")));
+            .andExpect(content().string(containsString("<span>User</span> <span>Ralph</span> <span>added with success</span>")));
     }
 
 }
