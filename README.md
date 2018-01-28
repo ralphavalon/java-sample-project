@@ -36,3 +36,9 @@ mvn clean package
 ```
 java -jar target/JavaSampleProject.jar
 ```
+
+* To run with Docker:
+
+```
+docker run -p 8081:8081 ralphavalon/javasampleproject:system_test
+```
